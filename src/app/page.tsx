@@ -1,4 +1,3 @@
-/* eslint-disable @typescript-eslint/no-unused-vars */
 import Image from "next/image";
 import Link from "next/link";
 import { RegisterLink, LoginLink } from "@kinde-oss/kinde-auth-nextjs/server";
@@ -6,23 +5,28 @@ import { ArrowRight } from 'lucide-react';
 
 export default function Home() {
   return (
-    <div className="grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20 font-[family-name:var(--font-geist-sans)]">
-      <main className="flex flex-col gap-8 row-start-2 items-center sm:items-start">
-        {/* <Image
-          className="dark:invert"
-          src="/medify-logo.svg" // Replace with your actual logo
-          alt="Medify logo"
-          width={180}
-          height={38}
-          priority
-        /> */}
-        <h1 className="text-4xl font-bold text-blue-600 mb-4">
+    <div className="grid grid-rows-[auto_1fr_auto] min-h-screen p-8 pb-20 gap-16 sm:p-20 font-[family-name:var(--font-geist-sans)]">
+      <header className="flex justify-center sm:justify-start items-center w-full mb-8 sm:mb-0">
+        <Link href="/" aria-label="Medify Home" className="inline-block">
+          <Image
+            src="/Medify logo.jpg"
+            alt="Medify logo"
+            width={200}
+            height={200}
+            className="w-40 h-40 sm:w-48 sm:h-48 md:w-56 md:h-56"
+            priority
+          />
+        </Link>
+      </header>
+
+      <main className="flex flex-col gap-8 items-center sm:items-start">
+        <h1 className="text-4xl font-bold text-blue-600 mb-4 text-center sm:text-left">
           Welcome to Medify
         </h1>
-        <p className="text-xl text-gray-700 mb-6 text-center sm:text-left">
+        <p className="text-xl text-gray-700 mb-6 text-center sm:text-left max-w-2xl">
           Your trusted companion for drug verification and health insights.
         </p>
-        <ol className="list-inside list-decimal text-sm text-center sm:text-left font-[family-name:var(--font-geist-mono)]">
+        <ol className="list-inside list-decimal text-sm text-center sm:text-left font-[family-name:var(--font-geist-mono)] max-w-2xl">
           <li className="mb-2">
             Verify your medications with our{" "}
             <span className="text-blue-600 font-semibold">
@@ -62,7 +66,7 @@ export default function Home() {
           </Link>
         </div>
       </main>
-      <footer className="row-start-3 flex gap-6 flex-wrap items-center justify-center text-sm text-gray-600">
+      <footer className="flex gap-6 flex-wrap items-center justify-center text-sm text-gray-600">
         <Link
           className="flex items-center gap-2 hover:text-blue-600"
           href="/privacy"
