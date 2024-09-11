@@ -1,0 +1,58 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider     = "postgresql"
+  url          = env("SUPABASE_DATABASE_URL")
+  directUrl    = env("SUPABASE_DIRECT_URL")
+  relationMode = "prisma"
+}
+
+model User {
+  id                 String   @id @default(cuid())
+  name               String
+  email              String   @unique
+  healthProfile      HealthProfile?
+  drugVerifications  DrugVerification[]
+  healthRecommendations HealthRecommendation[]
+}
+
+model HealthProfile {
+  id                 String   @id @default(cuid())
+  userId             String   @unique
+  user               User     @relation(fields: [userId], references: [id])
+  allergies          String[]
+  currentMedications String[]
+  medicalHistory     String
+  dietaryRestrictions String[]
+}
+
+model Drug {
+  id                 String   @id @default(cuid())
+  name               String
+  manufacturer       String
+  batchNumber        String?
+  expiryDate         DateTime?
+  verifications      DrugVerification[]
+}
+
+model DrugVerification {
+  id                 String   @id @default(cuid())
+  userId             String
+  user               User     @relation(fields: [userId], references: [id])
+  drugId             String
+  drug               Drug     @relation(fields: [drugId], references: [id])
+  verificationMethod String
+  verificationResult String
+  verifiedAt         DateTime @default(now())
+}
+
+model HealthRecommendation {
+  id                 String   @id @default(cuid())
+  userId             String
+  user               User     @relation(fields: [userId], references: [id])
+  recommendation     String
+  category           String
+  createdAt          DateTime @default(now())
+}
