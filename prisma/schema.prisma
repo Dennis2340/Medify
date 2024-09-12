@@ -19,13 +19,33 @@ model User {
 }
 
 model HealthProfile {
-  id                 String   @id @default(cuid())
-  userId             String   @unique
-  user               User     @relation(fields: [userId], references: [id])
-  allergies          String[]
-  currentMedications String[]
-  medicalHistory     String
-  dietaryRestrictions String[]
+  id                   String   @id @default(cuid())
+  userId               String   @unique
+  user                 User     @relation(fields: [userId], references: [id])
+  
+  // Essential fields
+  allergies            String[]
+  currentMedications   String[]
+  medicalConditions    String[]
+  
+  // Important but can be optional
+  age                  Int?
+  gender               String?
+  weight               Float?   // in kg
+  height               Float?   // in cm
+  
+  // Less critical, optional fields
+  medicalHistory       String?
+  dietaryRestrictions  String[]
+  familyHistory        String?
+  lifestyle            Json?    // For smoking, alcohol, exercise habits
+  pregnancyStatus      String?
+  bloodType            String?
+  
+  
+  // Timestamps
+  createdAt            DateTime @default(now())
+  updatedAt            DateTime @updatedAt
 }
 
 model Drug {
