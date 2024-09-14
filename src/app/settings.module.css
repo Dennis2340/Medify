@@ -1,0 +1,155 @@
+/* General Styles */
+.settings {
+  width: 100%;
+  height: 100vh;
+  background-color: #fff;
+  font-size: 14px;
+  color: #1f2024;
+  font-family: Inter, sans-serif;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Settings List */
+.settingsList {
+  flex: 1;
+  padding: 16px;
+  box-sizing: border-box;
+  overflow-y: auto;
+}
+
+.listItem {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 16px 0;
+}
+
+.content {
+  display: flex;
+  align-items: center;
+}
+
+.title {
+  font-weight: bold;
+}
+
+.rightButtonIcon {
+  width: 16px;
+  height: 16px;
+}
+
+.dividerIcon {
+  width: 100%;
+  height: 1px;
+  background-color: #e0e0e0;
+  margin: 8px 0;
+}
+
+/* Profile Info */
+.profileInfo {
+  display: flex;
+  align-items: center;
+  padding: 16px;
+  background-color: #f8f9fe;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+.avatarIcon {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+}
+
+.name {
+  margin-left: 16px;
+}
+
+.fullName {
+  font-weight: bold;
+}
+
+.username {
+  color: #71727a;
+}
+
+/* Navigation Bar */
+.navBar {
+  position: fixed;
+  width: 100%;
+  bottom: 0;
+  left: 0;
+  background-color: #fff;
+  height: 56px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 -1px 3px rgba(0, 0, 0, 0.1);
+  padding: 0 16px;
+  box-sizing: border-box;
+}
+
+.pageTitle {
+  font-size: 18px;
+  font-weight: bold;
+}
+
+/* Tab Bar */
+.tabBar {
+  position: fixed;
+  width: 100%;
+  bottom: 56px; /* Adjusted for space above tab bar */
+  left: 0;
+  background-color: #fff;
+  height: 56px;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  box-shadow: 0 -1px 3px rgba(0, 0, 0, 0.1);
+}
+
+.tab {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.icon {
+  width: 20px;
+  height: 20px;
+}
+
+.tabName {
+  font-size: 10px;
+  letter-spacing: 0.02em;
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+  .settingsList {
+      padding: 8px;
+  }
+
+  .listItem {
+      padding: 12px 0;
+  }
+
+  .avatarIcon {
+      width: 40px;
+      height: 40px;
+  }
+
+  .name {
+      margin-left: 12px;
+  }
+
+  .pageTitle {
+      font-size: 16px;
+  }
+
+  .tabBar {
+      bottom: 56px;
+      height: 50px; /* Adjusted height for better fit on smaller screens */
+  }
+}

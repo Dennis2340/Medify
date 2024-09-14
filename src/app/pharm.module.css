@@ -1,0 +1,227 @@
+/* General Styles */
+body {
+  margin: 0;
+  font-family: Inter, sans-serif;
+  color: #1f2024;
+}
+
+.container {
+  position: absolute;
+  top: calc(50% - 6px);
+  right: 14px;
+  width: 68px;
+  height: 14px;
+  overflow: hidden;
+  text-align: left;
+  font-size: 17px;
+}
+
+.iosStatusBar {
+  position: absolute;
+  width: 100%;
+  top: 0;
+  backdrop-filter: blur(40px);
+  background-color: #fff;
+  height: 44px;
+  text-align: center;
+  font-size: 15px;
+  font-family: 'SF Pro Text', sans-serif;
+}
+
+.findAPharmacy {
+  width: 100%;
+  position: relative;
+  background-color: #fff;
+  height: 100vh; /* Full viewport height */
+  overflow: auto;
+  text-align: left;
+  font-size: 10px;
+}
+
+/* Map Icon */
+.mapIcon {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 100%;
+  max-width: 865px;
+  height: auto;
+  aspect-ratio: 1;
+  object-fit: cover;
+}
+
+/* Image Styles */
+.imageIcon {
+  width: 32px;
+  height: 32px;
+  overflow: hidden;
+}
+
+.image {
+  position: relative;
+  height: 100%;
+  width: 100%;
+  padding: 40px;
+  background-image: url('Image.png');
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: top;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Pagination Dots */
+.paginationDots {
+  position: absolute;
+  bottom: 16px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  gap: 8px;
+}
+
+/* Dot Styles */
+.dot, .dot1 {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  position: relative;
+}
+
+.dot {
+  background-color: #1f2024;
+  opacity: 0.1;
+}
+
+.dot1 {
+  background-color: #006ffd;
+}
+
+/* Buttons */
+.buttonSecondary {
+  border-radius: 12px;
+  border: 1.5px solid #1d192b;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 12px 16px;
+  font-size: 12px;
+  color: #1d192b;
+  text-align: center;
+}
+
+/* Content Styles */
+.content {
+  padding: 24px;
+  gap: 24px;
+}
+
+/* Drawer */
+.drawer {
+  position: absolute;
+  width: 100%;
+  bottom: 0;
+  border-radius: 24px 24px 0 0;
+  background-color: #fff;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  color: #8f9098;
+}
+
+/* Text Styles */
+.peoplesPharmacy {
+  font-weight: 800;
+}
+
+.subtitle, .subtitle1, .subtitle2 {
+  font-size: 12px;
+  color: #71727a;
+}
+
+.title {
+  font-size: 16px;
+  color: #1f2024;
+}
+
+.description {
+  font-size: 12px;
+  line-height: 16px;
+  color: #71727a;
+}
+
+/* Avatar and Icon Styles */
+.avatarIcon, .starFilledIcon {
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+}
+
+.starFilledIcon {
+  width: 12px;
+  height: 12px;
+}
+
+.avatarParent, .city, .arrowLeftParent {
+  display: flex;
+  flex-direction: column;
+}
+
+.avatarParent {
+  gap: 8px;
+}
+
+.city {
+  gap: 4px;
+}
+
+.arrowLeftParent {
+  position: absolute;
+  top: 44px;
+  left: 0;
+  padding: 24px;
+  font-size: 16px;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .mapIcon {
+      width: 90%;
+      height: auto;
+  }
+
+  .image {
+      padding: 20px;
+  }
+
+  .content {
+      padding: 16px;
+  }
+
+  .drawer {
+      bottom: 0;
+  }
+
+  .iosStatusBar {
+      height: 36px;
+  }
+}
+
+@media (max-width: 480px) {
+  .buttonSecondary {
+      padding: 8px 12px;
+      font-size: 10px;
+  }
+
+  .subtitle, .subtitle1, .subtitle2, .description {
+      font-size: 10px;
+  }
+
+  .container {
+      font-size: 14px;
+  }
+}

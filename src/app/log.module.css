@@ -1,0 +1,275 @@
+.title {
+  align-self: stretch;
+  position: relative;
+  line-height: 20px;
+}
+.content {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+}
+.rightButtonIcon {
+  width: 12px;
+  position: relative;
+  height: 12px;
+  overflow: hidden;
+  flex-shrink: 0;
+}
+.listItem {
+  align-self: stretch;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: flex-start;
+  padding: 16px;
+  gap: 16px;
+}
+.dividerIcon {
+  align-self: stretch;
+  position: relative;
+  max-width: 100%;
+  overflow: hidden;
+  max-height: 100%;
+}
+.settings {
+  position: absolute;
+  top: 253px;
+  left: 0px;
+  width: 375px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+  padding: 24px;
+  box-sizing: border-box;
+  gap: 2px;
+  text-align: left;
+}
+.avatarIcon {
+  width: 81.5px;
+  position: relative;
+  height: 82px;
+  object-fit: cover;
+}
+.lucasScott {
+  position: relative;
+  letter-spacing: 0.01em;
+  font-weight: 800;
+}
+.lucasscott3 {
+  position: relative;
+  font-size: 12px;
+  letter-spacing: 0.01em;
+  line-height: 16px;
+  color: #71727a;
+}
+.name {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 4px;
+}
+.profileInfo {
+  position: absolute;
+  top: 100px;
+  left: 1px;
+  width: 374px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 8px 140px;
+  box-sizing: border-box;
+  gap: 16px;
+  font-size: 16px;
+}
+.iosStatusBar {
+  position: absolute;
+  width: 100%;
+  top: 0px;
+  right: 0px;
+  left: 0px;
+  backdrop-filter: blur(40px);
+  background-color: #fff;
+  height: 44px;
+  display: none;
+}
+.iosHomeIndicator {
+  position: absolute;
+  width: 100%;
+  right: 0px;
+  bottom: 0px;
+  left: 0px;
+  height: 34px;
+  display: none;
+}
+.pageTitle {
+  position: absolute;
+  top: calc(50% - 8.5px);
+  left: calc(50% - 29px);
+}
+.navBar {
+  position: absolute;
+  width: 100%;
+  top: 44px;
+  right: 0px;
+  left: 0px;
+  background-color: #fff;
+  height: 56px;
+  overflow: hidden;
+}
+.icon {
+  width: 20px;
+  position: relative;
+  height: 20px;
+  overflow: hidden;
+  flex-shrink: 0;
+}
+.tabName {
+  position: relative;
+  letter-spacing: 0.02em;
+  line-height: 14px;
+}
+.tab1 {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 8px;
+}
+.tab3 {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 8px;
+  color: #1f2024;
+}
+.tabBar {
+  position: absolute;
+  width: 100%;
+  right: 0px;
+  bottom: 0px;
+  left: 0px;
+  background-color: #fff;
+  height: 88px;
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  justify-content: flex-start;
+  padding: 16px 16px 32px;
+  box-sizing: border-box;
+  gap: 4px;
+  font-size: 10px;
+  color: #71727a;
+}
+.overlay {
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  top: -0.11px;
+  right: 0px;
+  bottom: 0.11px;
+  left: 0px;
+  background-color: #1f2024;
+  overflow: hidden;
+  opacity: 0.87;
+}
+.title8 {
+  align-self: stretch;
+  position: relative;
+  letter-spacing: 0.01em;
+  font-weight: 800;
+}
+.description {
+  align-self: stretch;
+  position: relative;
+  font-size: 12px;
+  letter-spacing: 0.01em;
+  line-height: 16px;
+  color: #71727a;
+}
+.content8 {
+  align-self: stretch;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  padding: 8px;
+  gap: 8px;
+}
+.button {
+  position: relative;
+  font-weight: 600;
+}
+.action1 {
+  flex: 1;
+  border-radius: 12px;
+  border: 1.5px solid #1d192b;
+  box-sizing: border-box;
+  height: 40px;
+  overflow: hidden;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  padding: 12px 16px;
+}
+.action2 {
+  flex: 1;
+  border-radius: 12px;
+  background-color: #1d192b;
+  height: 40px;
+  overflow: hidden;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  padding: 12px 16px;
+  box-sizing: border-box;
+  color: #fff;
+}
+.actions {
+  align-self: stretch;
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  justify-content: flex-start;
+  gap: 8px;
+  text-align: left;
+  font-size: 12px;
+  color: #1d192b;
+}
+.buttonDialog {
+  position: absolute;
+  top: calc(50% - 83.5px);
+  left: calc(50% - 150px);
+  border-radius: 16px;
+  background-color: #fff;
+  width: 300px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  padding: 16px;
+  box-sizing: border-box;
+  gap: 20px;
+  font-size: 16px;
+}
+.logOut {
+  width: 100%;
+  position: relative;
+  background-color: #fff;
+  height: 812px;
+  overflow: hidden;
+  text-align: center;
+  font-size: 14px;
+  color: #1f2024;
+  font-family: Inter;
+}
+

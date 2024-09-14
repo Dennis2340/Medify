@@ -1,0 +1,184 @@
+/* General Styles */
+.alerts {
+  width: 100%;
+  position: relative;
+  background-color: #fff;
+  height: 100vh; /* Changed from fixed height to full viewport height for better responsiveness */
+  overflow: hidden;
+  text-align: left;
+  font-size: 14px;
+  color: #1f2024;
+  font-family: Inter, sans-serif; /* Added fallback font */
+}
+
+/* Search Bar */
+.searchIcon {
+  width: 16px;
+  height: 16px;
+  overflow: hidden;
+}
+
+.search {
+  line-height: 20px;
+}
+
+.text {
+  flex: 1;
+  display: flex;
+  align-items: center;
+}
+
+.searchBar {
+  position: fixed; /* Changed to fixed positioning for better accessibility */
+  width: calc(100% - 32px);
+  top: 16px; /* Adjusted for better visibility */
+  left: 16px;
+  border-radius: 24px;
+  background-color: #f8f9fe;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  padding: 12px 16px;
+  box-sizing: border-box;
+  color: #8f9098;
+}
+
+/* Chat List Styles */
+.avatarIcon {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  overflow: hidden;
+}
+
+.supportingVisuals {
+  display: flex;
+  align-items: center;
+}
+
+.title {
+  font-weight: bold;
+}
+
+.description {
+  letter-spacing: 0.01em;
+  line-height: 16px;
+  color: #71727a;
+}
+
+.content {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.div {
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  font-weight: 600;
+}
+
+.badge {
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  background-color: #1d192b;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 10px;
+  color: #fff;
+}
+
+.listItem {
+  display: flex;
+  align-items: center;
+  padding: 16px;
+  gap: 16px;
+  border-bottom: 1px solid #e0e0e0; /* Added border for separation */
+}
+
+.chats {
+  position: relative; /* Changed from absolute for better layout handling */
+  margin-top: 80px; /* Adjusted for fixed search bar */
+  width: 100%;
+  height: calc(100vh - 80px); /* Adjusted height for full viewport minus search bar */
+  overflow-y: auto;
+  padding: 16px;
+  box-sizing: border-box;
+  font-size: 12px;
+}
+
+/* Navbar and Tabs */
+.navBar {
+  position: fixed; /* Fixed positioning for nav bar */
+  width: 100%;
+  top: 0;
+  left: 0;
+  background-color: #fff;
+  height: 56px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 16px;
+  box-sizing: border-box;
+  border-bottom: 1px solid #e0e0e0; /* Added border for separation */
+}
+
+.pageTitle {
+  font-size: 18px; /* Adjusted font size for better visibility */
+}
+
+.rightButton {
+  font-size: 12px;
+  font-weight: 600;
+  color: #1d192b;
+}
+
+.tabBar {
+  position: fixed; /* Fixed positioning for tab bar */
+  width: 100%;
+  bottom: 0;
+  left: 0;
+  background-color: #fff;
+  height: 56px;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  padding: 0 16px;
+  box-sizing: border-box;
+  border-top: 1px solid #e0e0e0; /* Added border for separation */
+}
+
+.icon {
+  width: 20px;
+  height: 20px;
+}
+
+.tabName {
+  font-size: 10px;
+  letter-spacing: 0.02em;
+  line-height: 14px;
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+  .searchBar {
+      width: calc(100% - 16px);
+      left: 8px;
+      right: 8px;
+      top: 8px;
+      padding: 8px;
+  }
+
+  .listItem {
+      padding: 12px;
+      gap: 12px;
+  }
+
+  .navBar,
+  .tabBar {
+      padding: 0 8px;
+  }
+}

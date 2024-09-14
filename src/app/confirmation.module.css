@@ -1,0 +1,146 @@
+/* General container styles */
+.confirmationCode {
+  width: 100%;
+  min-height: 100vh;
+  background-color: #fff;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  font-family: 'Inter', sans-serif;
+  font-size: 16px;
+  color: #1f2024;
+  padding: 16px; 
+  box-sizing: border-box;
+}
+
+/* Title and Text */
+.enterConfirmationCode {
+  font-size: 24px;
+  font-weight: 800;
+  letter-spacing: 0.01em;
+  margin-bottom: 16px;
+  text-align: center;
+}
+
+.a4DigitCodeContainer {
+  font-size: 14px;
+  color: #71727a;
+  line-height: 1.4;
+  text-align: center;
+  margin-bottom: 24px;
+}
+
+/* Input Code Section */
+.codeInput {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 8px;
+  justify-content: center;
+  margin-bottom: 32px;
+}
+
+.textField {
+  width: 60px;
+  height: 60px;
+  border-radius: 8px;
+  border: 1px solid #c5c6cc;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 24px;
+  color: #1f2024;
+  background-color: #fff;
+  box-sizing: border-box;
+}
+
+/* Primary and Tertiary Button Styles */
+.button {
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.buttonTerciary {
+  background-color: transparent;
+  color: #006ffd;
+  font-size: 14px;
+  text-decoration: underline;
+  margin-bottom: 16px;
+  display: inline-block;
+}
+
+.buttonPrimary {
+  background-color: #1d192b;
+  color: #fff;
+  width: 100%;
+  max-width: 327px;
+  height: 48px;
+  border-radius: 8px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 16px;
+  transition: background-color 0.2s ease-in-out;
+}
+
+.buttonPrimary:hover {
+  background-color: #333;
+}
+
+/* Responsive Layout */
+@media (max-width: 768px) {
+  .confirmationCode {
+      padding: 8px;
+  }
+
+  .enterConfirmationCode {
+      font-size: 20px;
+  }
+
+  .a4DigitCodeContainer {
+      font-size: 12px;
+  }
+
+  .codeInput {
+      grid-template-columns: repeat(4, 1fr);
+      gap: 6px;
+  }
+
+  .textField {
+      width: 50px;
+      height: 50px;
+  }
+
+  .buttonPrimary {
+      height: 44px;
+  }
+}
+
+@media (max-width: 480px) {
+  .confirmationCode {
+      padding: 4px;
+  }
+
+  .enterConfirmationCode {
+      font-size: 18px;
+  }
+
+  .a4DigitCodeContainer {
+      font-size: 12px;
+  }
+
+  .codeInput {
+      grid-template-columns: repeat(4, 1fr);
+      gap: 4px;
+  }
+
+  .textField {
+      width: 45px;
+      height: 45px;
+  }
+
+  .buttonPrimary {
+      height: 40px;
+      font-size: 14px;
+  }
+}

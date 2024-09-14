@@ -1,0 +1,649 @@
+.signUp1 {
+  width: 327px;
+  position: relative;
+  letter-spacing: 0.01em;
+  font-weight: 800;
+  display: inline-block;
+}
+.createAnAccount {
+  width: 327px;
+  position: relative;
+  font-size: 12px;
+  letter-spacing: 0.01em;
+  line-height: 16px;
+  color: #71727a;
+  display: inline-block;
+}
+.text {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+  gap: 8px;
+  font-size: 16px;
+}
+.title {
+  align-self: stretch;
+  position: relative;
+}
+.cursorIcon {
+  width: 1.5px;
+  position: relative;
+  max-width: 100%;
+  overflow: hidden;
+  height: 16px;
+}
+.text1 {
+  flex: 1;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 1px;
+}
+.content {
+  flex: 1;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: flex-start;
+}
+.field {
+  align-self: stretch;
+  border-radius: 12px;
+  border: 1.5px solid #1d192b;
+  box-sizing: border-box;
+  height: 48px;
+  overflow: hidden;
+  flex-shrink: 0;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: flex-start;
+  padding: 12px 16px;
+  font-size: 14px;
+  color: #1f2024;
+}
+.textField {
+  width: 327px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+  gap: 8px;
+}
+.placeholder {
+  position: relative;
+  line-height: 20px;
+}
+.field1 {
+  align-self: stretch;
+  border-radius: 12px;
+  border: 1px solid #c5c6cc;
+  box-sizing: border-box;
+  height: 48px;
+  overflow: hidden;
+  flex-shrink: 0;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: flex-start;
+  padding: 12px 16px;
+  font-size: 14px;
+  color: #8f9098;
+}
+.icon {
+  width: 16px;
+  position: relative;
+  height: 16px;
+  overflow: hidden;
+  flex-shrink: 0;
+  object-fit: cover;
+}
+.field2 {
+  align-self: stretch;
+  border-radius: 12px;
+  border: 1px solid #c5c6cc;
+  box-sizing: border-box;
+  height: 48px;
+  overflow: hidden;
+  flex-shrink: 0;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: flex-start;
+  padding: 12px 16px;
+  gap: 8px;
+  font-size: 14px;
+  color: #8f9098;
+}
+.field3 {
+  align-self: stretch;
+  border-radius: 12px;
+  border: 1px solid #c5c6cc;
+  box-sizing: border-box;
+  height: 48px;
+  overflow: hidden;
+  flex-shrink: 0;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: flex-start;
+  padding: 12px 16px;
+  gap: 8px;
+}
+.textField3 {
+  width: 327px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+  font-size: 14px;
+  color: #8f9098;
+}
+.form {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+  gap: 16px;
+  color: #2f3036;
+}
+.checkbox {
+  width: 24px;
+  position: relative;
+  border-radius: 6px;
+  border: 1.5px solid #c5c6cc;
+  box-sizing: border-box;
+  height: 24px;
+}
+.iveReadAnd {
+  letter-spacing: 0.01em;
+  line-height: 16px;
+}
+.termsAndConditions {
+  font-weight: 600;
+  color: #006ffd;
+}
+.iveReadAndContainer {
+  flex: 1;
+  position: relative;
+}
+.checkboxParent {
+  align-self: stretch;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 12px;
+  color: #71727a;
+}
+.loginOptions {
+  position: absolute;
+  top: 44px;
+  left: 0px;
+  width: 375px;
+  height: 475px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+  padding: 24px;
+  box-sizing: border-box;
+  gap: 24px;
+}
+.letter {
+  position: absolute;
+  width: 100%;
+  top: calc(50% - 14.5px);
+  left: 0px;
+  text-transform: uppercase;
+  font-weight: 300;
+  display: inline-block;
+}
+.z {
+  position: absolute;
+  width: calc(100% - 228px);
+  top: 0px;
+  right: 228px;
+  left: 0px;
+  box-shadow: 0px 1px 0px rgba(0, 0, 0, 0.3);
+  border-radius: 5px;
+  background-color: #fff;
+  height: 43px;
+}
+.x {
+  position: absolute;
+  width: calc(100% - 228px);
+  top: 0px;
+  right: 190px;
+  left: 38px;
+  box-shadow: 0px 1px 0px rgba(0, 0, 0, 0.3);
+  border-radius: 5px;
+  background-color: #fff;
+  height: 43px;
+}
+.c {
+  position: absolute;
+  width: calc(100% - 228px);
+  top: 0px;
+  right: 152px;
+  left: 76px;
+  box-shadow: 0px 1px 0px rgba(0, 0, 0, 0.3);
+  border-radius: 5px;
+  background-color: #fff;
+  height: 43px;
+}
+.v {
+  position: absolute;
+  width: calc(100% - 228px);
+  top: 0px;
+  right: 114px;
+  left: 114px;
+  box-shadow: 0px 1px 0px rgba(0, 0, 0, 0.3);
+  border-radius: 5px;
+  background-color: #fff;
+  height: 43px;
+}
+.b {
+  position: absolute;
+  width: calc(100% - 228px);
+  top: 0px;
+  right: 76px;
+  left: 152px;
+  box-shadow: 0px 1px 0px rgba(0, 0, 0, 0.3);
+  border-radius: 5px;
+  background-color: #fff;
+  height: 43px;
+}
+.n {
+  position: absolute;
+  width: calc(100% - 228px);
+  top: 0px;
+  right: 38px;
+  left: 190px;
+  box-shadow: 0px 1px 0px rgba(0, 0, 0, 0.3);
+  border-radius: 5px;
+  background-color: #fff;
+  height: 43px;
+}
+.m {
+  position: absolute;
+  width: calc(100% - 228px);
+  top: 0px;
+  right: 0px;
+  left: 228px;
+  box-shadow: 0px 1px 0px rgba(0, 0, 0, 0.3);
+  border-radius: 5px;
+  background-color: #fff;
+  height: 43px;
+}
+.bottomRow {
+  position: absolute;
+  width: calc(100% - 115px);
+  top: 116px;
+  right: 57px;
+  left: 58px;
+  height: 43px;
+}
+.a {
+  position: absolute;
+  width: calc(100% - 304px);
+  top: 0px;
+  right: 304px;
+  left: 0px;
+  box-shadow: 0px 1px 0px rgba(0, 0, 0, 0.3);
+  border-radius: 5px;
+  background-color: #fff;
+  height: 43px;
+}
+.s {
+  position: absolute;
+  width: calc(100% - 304px);
+  top: 0px;
+  right: 266px;
+  left: 38px;
+  box-shadow: 0px 1px 0px rgba(0, 0, 0, 0.3);
+  border-radius: 5px;
+  background-color: #fff;
+  height: 43px;
+}
+.d {
+  position: absolute;
+  width: calc(100% - 304px);
+  top: 0px;
+  right: 228px;
+  left: 76px;
+  box-shadow: 0px 1px 0px rgba(0, 0, 0, 0.3);
+  border-radius: 5px;
+  background-color: #fff;
+  height: 43px;
+}
+.f {
+  position: absolute;
+  width: calc(100% - 304px);
+  top: 0px;
+  right: 190px;
+  left: 114px;
+  box-shadow: 0px 1px 0px rgba(0, 0, 0, 0.3);
+  border-radius: 5px;
+  background-color: #fff;
+  height: 43px;
+}
+.g {
+  position: absolute;
+  width: calc(100% - 304px);
+  top: 0px;
+  right: 152px;
+  left: 152px;
+  box-shadow: 0px 1px 0px rgba(0, 0, 0, 0.3);
+  border-radius: 5px;
+  background-color: #fff;
+  height: 43px;
+}
+.h {
+  position: absolute;
+  width: calc(100% - 304px);
+  top: 0px;
+  right: 114px;
+  left: 190px;
+  box-shadow: 0px 1px 0px rgba(0, 0, 0, 0.3);
+  border-radius: 5px;
+  background-color: #fff;
+  height: 43px;
+}
+.j {
+  position: absolute;
+  width: calc(100% - 304px);
+  top: 0px;
+  right: 76px;
+  left: 228px;
+  box-shadow: 0px 1px 0px rgba(0, 0, 0, 0.3);
+  border-radius: 5px;
+  background-color: #fff;
+  height: 43px;
+}
+.k {
+  position: absolute;
+  width: calc(100% - 304px);
+  top: 0px;
+  right: 38px;
+  left: 266px;
+  box-shadow: 0px 1px 0px rgba(0, 0, 0, 0.3);
+  border-radius: 5px;
+  background-color: #fff;
+  height: 43px;
+}
+.l {
+  position: absolute;
+  width: calc(100% - 304px);
+  top: 0px;
+  right: 0px;
+  left: 304px;
+  box-shadow: 0px 1px 0px rgba(0, 0, 0, 0.3);
+  border-radius: 5px;
+  background-color: #fff;
+  height: 43px;
+}
+.middleRow {
+  position: absolute;
+  width: calc(100% - 39px);
+  top: 62px;
+  right: 17.25px;
+  left: 21.75px;
+  height: 43px;
+}
+.q {
+  position: absolute;
+  width: calc(100% - 333px);
+  top: 0px;
+  right: 333px;
+  left: 0px;
+  box-shadow: 0px 1px 0px rgba(0, 0, 0, 0.3);
+  border-radius: 5px;
+  background-color: #fff;
+  height: 43px;
+}
+.w {
+  position: absolute;
+  width: calc(100% - 333px);
+  top: 0px;
+  right: 296px;
+  left: 37px;
+  box-shadow: 0px 1px 0px rgba(0, 0, 0, 0.3);
+  border-radius: 5px;
+  background-color: #fff;
+  height: 43px;
+}
+.e {
+  position: absolute;
+  width: calc(100% - 333px);
+  top: 0px;
+  right: 259px;
+  left: 74px;
+  box-shadow: 0px 1px 0px rgba(0, 0, 0, 0.3);
+  border-radius: 5px;
+  background-color: #fff;
+  height: 43px;
+}
+.r {
+  position: absolute;
+  width: calc(100% - 333px);
+  top: 0px;
+  right: 222px;
+  left: 111px;
+  box-shadow: 0px 1px 0px rgba(0, 0, 0, 0.3);
+  border-radius: 5px;
+  background-color: #fff;
+  height: 43px;
+}
+.t {
+  position: absolute;
+  width: calc(100% - 333px);
+  top: 0px;
+  right: 185px;
+  left: 148px;
+  box-shadow: 0px 1px 0px rgba(0, 0, 0, 0.3);
+  border-radius: 5px;
+  background-color: #fff;
+  height: 43px;
+}
+.y {
+  position: absolute;
+  width: calc(100% - 333px);
+  top: 0px;
+  right: 148px;
+  left: 185px;
+  box-shadow: 0px 1px 0px rgba(0, 0, 0, 0.3);
+  border-radius: 5px;
+  background-color: #fff;
+  height: 43px;
+}
+.u {
+  position: absolute;
+  width: calc(100% - 333px);
+  top: 0px;
+  right: 111px;
+  left: 222px;
+  box-shadow: 0px 1px 0px rgba(0, 0, 0, 0.3);
+  border-radius: 5px;
+  background-color: #fff;
+  height: 43px;
+}
+.i {
+  position: absolute;
+  width: calc(100% - 333px);
+  top: 0px;
+  right: 74px;
+  left: 259px;
+  box-shadow: 0px 1px 0px rgba(0, 0, 0, 0.3);
+  border-radius: 5px;
+  background-color: #fff;
+  height: 43px;
+}
+.o {
+  position: absolute;
+  width: calc(100% - 333px);
+  top: 0px;
+  right: 37px;
+  left: 296px;
+  box-shadow: 0px 1px 0px rgba(0, 0, 0, 0.3);
+  border-radius: 5px;
+  background-color: #fff;
+  height: 43px;
+}
+.p {
+  position: absolute;
+  width: calc(100% - 333px);
+  top: 0px;
+  right: 0px;
+  left: 333px;
+  box-shadow: 0px 1px 0px rgba(0, 0, 0, 0.3);
+  border-radius: 5px;
+  background-color: #fff;
+  height: 43px;
+}
+.topRow {
+  position: absolute;
+  width: calc(100% - 11px);
+  top: 8px;
+  right: 6px;
+  left: 5px;
+  height: 43px;
+}
+.icon2 {
+  position: absolute;
+  top: 116px;
+  left: 3px;
+  border-radius: 5px;
+  width: 42px;
+  height: 43px;
+}
+.icon3 {
+  position: absolute;
+  top: 116px;
+  right: 3px;
+  border-radius: 5px;
+  width: 42px;
+  height: 42px;
+}
+.alphabet {
+  align-self: stretch;
+  position: relative;
+  backdrop-filter: blur(70px);
+  height: 169px;
+  overflow: hidden;
+  flex-shrink: 0;
+}
+.homeIndicator {
+  position: absolute;
+  top: 110px;
+  left: calc(50% - 66.5px);
+  border-radius: 3px;
+  background-color: #1f2024;
+  width: 133px;
+  height: 6px;
+}
+.micIcon {
+  position: absolute;
+  top: 64px;
+  right: 18px;
+  width: 42px;
+  height: 42px;
+  overflow: hidden;
+}
+.emojisIcon {
+  position: absolute;
+  top: 64px;
+  left: 18px;
+  width: 42px;
+  height: 42px;
+  overflow: hidden;
+}
+.space1 {
+  position: absolute;
+  width: 100%;
+  top: calc(50% - 9.5px);
+  left: 0px;
+  letter-spacing: -0.02em;
+  display: inline-block;
+}
+.space {
+  position: absolute;
+  width: calc(100% - 193px);
+  top: 3px;
+  right: 97px;
+  left: 96px;
+  box-shadow: 0px 1px 0px rgba(0, 0, 0, 0.3);
+  border-radius: 5px;
+  background-color: #fff;
+  height: 43px;
+}
+.return {
+  position: absolute;
+  top: 3px;
+  right: 3px;
+  box-shadow: 0px 1px 0px rgba(0, 0, 0, 0.3);
+  border-radius: 5px;
+  background-color: #006ffd;
+  width: 87px;
+  height: 43px;
+  color: #fff;
+}
+.div {
+  position: absolute;
+  top: 3px;
+  left: 3px;
+  box-shadow: 0px 1px 0px rgba(0, 0, 0, 0.3);
+  border-radius: 5px;
+  background-color: #c5c6cc;
+  width: 87px;
+  height: 43px;
+}
+.controller {
+  align-self: stretch;
+  position: relative;
+  height: 124px;
+  overflow: hidden;
+  flex-shrink: 0;
+  font-size: 16px;
+}
+.iosKeyboardPortrait {
+  position: absolute;
+  width: 100%;
+  right: 0px;
+  bottom: 0px;
+  left: 0px;
+  backdrop-filter: blur(70px);
+  background-color: #d4d6dd;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+  text-align: center;
+  font-size: 24px;
+  font-family: 'SF Pro Text';
+}
+.iosStatusBar {
+  position: absolute;
+  width: 100%;
+  top: 0px;
+  right: 0px;
+  left: 0px;
+  backdrop-filter: blur(40px);
+  height: 44px;
+  display: none;
+}
+.signUp {
+  width: 100%;
+  position: relative;
+  background-color: #fff;
+  height: 812px;
+  overflow: hidden;
+  text-align: left;
+  font-size: 12px;
+  color: #1f2024;
+  font-family: Inter;
+}
+

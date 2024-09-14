@@ -1,0 +1,603 @@
+.recentSearches {
+  position: relative;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  font-weight: 600;
+}
+.recentSearchesWrapper {
+  align-self: stretch;
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  justify-content: flex-start;
+  padding: 16px;
+  font-size: 10px;
+  color: #71727a;
+}
+.title {
+  align-self: stretch;
+  position: relative;
+  line-height: 20px;
+}
+.content {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+}
+.rightButtonIcon {
+  width: 12px;
+  position: relative;
+  height: 12px;
+  overflow: hidden;
+  flex-shrink: 0;
+  object-fit: cover;
+}
+.listItem {
+  align-self: stretch;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: flex-start;
+  padding: 16px;
+  gap: 16px;
+}
+.settings {
+  position: absolute;
+  top: 96px;
+  left: 0px;
+  width: 375px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+  padding: 16px;
+  box-sizing: border-box;
+}
+.searchIcon {
+  width: 16px;
+  position: relative;
+  height: 16px;
+  overflow: hidden;
+  flex-shrink: 0;
+}
+.text1 {
+  position: relative;
+  line-height: 20px;
+}
+.cursorIcon {
+  width: 1.5px;
+  position: relative;
+  max-width: 100%;
+  overflow: hidden;
+  height: 16px;
+}
+.text {
+  flex: 1;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 1px;
+}
+.searchBar {
+  position: absolute;
+  width: calc(100% - 32px);
+  top: 54px;
+  right: 16px;
+  left: 16px;
+  border-radius: 24px;
+  background-color: #f8f9fe;
+  overflow: hidden;
+  display: flex;
+  flex-direction: row;
+  align-items: flex-end;
+  justify-content: flex-start;
+  padding: 12px 16px;
+  box-sizing: border-box;
+  gap: 16px;
+}
+.letter {
+  position: absolute;
+  width: 100%;
+  top: calc(50% - 14.5px);
+  left: 0px;
+  text-transform: uppercase;
+  font-weight: 300;
+  display: inline-block;
+}
+.z {
+  position: absolute;
+  width: calc(100% - 228px);
+  top: 0px;
+  right: 228px;
+  left: 0px;
+  box-shadow: 0px 1px 0px rgba(0, 0, 0, 0.3);
+  border-radius: 5px;
+  background-color: #fff;
+  height: 43px;
+}
+.x {
+  position: absolute;
+  width: calc(100% - 228px);
+  top: 0px;
+  right: 190px;
+  left: 38px;
+  box-shadow: 0px 1px 0px rgba(0, 0, 0, 0.3);
+  border-radius: 5px;
+  background-color: #fff;
+  height: 43px;
+}
+.c {
+  position: absolute;
+  width: calc(100% - 228px);
+  top: 0px;
+  right: 152px;
+  left: 76px;
+  box-shadow: 0px 1px 0px rgba(0, 0, 0, 0.3);
+  border-radius: 5px;
+  background-color: #fff;
+  height: 43px;
+}
+.v {
+  position: absolute;
+  width: calc(100% - 228px);
+  top: 0px;
+  right: 114px;
+  left: 114px;
+  box-shadow: 0px 1px 0px rgba(0, 0, 0, 0.3);
+  border-radius: 5px;
+  background-color: #fff;
+  height: 43px;
+}
+.b {
+  position: absolute;
+  width: calc(100% - 228px);
+  top: 0px;
+  right: 76px;
+  left: 152px;
+  box-shadow: 0px 1px 0px rgba(0, 0, 0, 0.3);
+  border-radius: 5px;
+  background-color: #fff;
+  height: 43px;
+}
+.n {
+  position: absolute;
+  width: calc(100% - 228px);
+  top: 0px;
+  right: 38px;
+  left: 190px;
+  box-shadow: 0px 1px 0px rgba(0, 0, 0, 0.3);
+  border-radius: 5px;
+  background-color: #fff;
+  height: 43px;
+}
+.m {
+  position: absolute;
+  width: calc(100% - 228px);
+  top: 0px;
+  right: 0px;
+  left: 228px;
+  box-shadow: 0px 1px 0px rgba(0, 0, 0, 0.3);
+  border-radius: 5px;
+  background-color: #fff;
+  height: 43px;
+}
+.bottomRow {
+  position: absolute;
+  width: calc(100% - 115px);
+  top: 116px;
+  right: 57px;
+  left: 58px;
+  height: 43px;
+}
+.a {
+  position: absolute;
+  width: calc(100% - 304px);
+  top: 0px;
+  right: 304px;
+  left: 0px;
+  box-shadow: 0px 1px 0px rgba(0, 0, 0, 0.3);
+  border-radius: 5px;
+  background-color: #fff;
+  height: 43px;
+}
+.s {
+  position: absolute;
+  width: calc(100% - 304px);
+  top: 0px;
+  right: 266px;
+  left: 38px;
+  box-shadow: 0px 1px 0px rgba(0, 0, 0, 0.3);
+  border-radius: 5px;
+  background-color: #fff;
+  height: 43px;
+}
+.d {
+  position: absolute;
+  width: calc(100% - 304px);
+  top: 0px;
+  right: 228px;
+  left: 76px;
+  box-shadow: 0px 1px 0px rgba(0, 0, 0, 0.3);
+  border-radius: 5px;
+  background-color: #fff;
+  height: 43px;
+}
+.f {
+  position: absolute;
+  width: calc(100% - 304px);
+  top: 0px;
+  right: 190px;
+  left: 114px;
+  box-shadow: 0px 1px 0px rgba(0, 0, 0, 0.3);
+  border-radius: 5px;
+  background-color: #fff;
+  height: 43px;
+}
+.g {
+  position: absolute;
+  width: calc(100% - 304px);
+  top: 0px;
+  right: 152px;
+  left: 152px;
+  box-shadow: 0px 1px 0px rgba(0, 0, 0, 0.3);
+  border-radius: 5px;
+  background-color: #fff;
+  height: 43px;
+}
+.h {
+  position: absolute;
+  width: calc(100% - 304px);
+  top: 0px;
+  right: 114px;
+  left: 190px;
+  box-shadow: 0px 1px 0px rgba(0, 0, 0, 0.3);
+  border-radius: 5px;
+  background-color: #fff;
+  height: 43px;
+}
+.j {
+  position: absolute;
+  width: calc(100% - 304px);
+  top: 0px;
+  right: 76px;
+  left: 228px;
+  box-shadow: 0px 1px 0px rgba(0, 0, 0, 0.3);
+  border-radius: 5px;
+  background-color: #fff;
+  height: 43px;
+}
+.k {
+  position: absolute;
+  width: calc(100% - 304px);
+  top: 0px;
+  right: 38px;
+  left: 266px;
+  box-shadow: 0px 1px 0px rgba(0, 0, 0, 0.3);
+  border-radius: 5px;
+  background-color: #fff;
+  height: 43px;
+}
+.l {
+  position: absolute;
+  width: calc(100% - 304px);
+  top: 0px;
+  right: 0px;
+  left: 304px;
+  box-shadow: 0px 1px 0px rgba(0, 0, 0, 0.3);
+  border-radius: 5px;
+  background-color: #fff;
+  height: 43px;
+}
+.middleRow {
+  position: absolute;
+  width: calc(100% - 39px);
+  top: 62px;
+  right: 17.25px;
+  left: 21.75px;
+  height: 43px;
+}
+.q {
+  position: absolute;
+  width: calc(100% - 333px);
+  top: 0px;
+  right: 333px;
+  left: 0px;
+  box-shadow: 0px 1px 0px rgba(0, 0, 0, 0.3);
+  border-radius: 5px;
+  background-color: #fff;
+  height: 43px;
+}
+.w {
+  position: absolute;
+  width: calc(100% - 333px);
+  top: 0px;
+  right: 296px;
+  left: 37px;
+  box-shadow: 0px 1px 0px rgba(0, 0, 0, 0.3);
+  border-radius: 5px;
+  background-color: #fff;
+  height: 43px;
+}
+.e {
+  position: absolute;
+  width: calc(100% - 333px);
+  top: 0px;
+  right: 259px;
+  left: 74px;
+  box-shadow: 0px 1px 0px rgba(0, 0, 0, 0.3);
+  border-radius: 5px;
+  background-color: #fff;
+  height: 43px;
+}
+.r {
+  position: absolute;
+  width: calc(100% - 333px);
+  top: 0px;
+  right: 222px;
+  left: 111px;
+  box-shadow: 0px 1px 0px rgba(0, 0, 0, 0.3);
+  border-radius: 5px;
+  background-color: #fff;
+  height: 43px;
+}
+.t {
+  position: absolute;
+  width: calc(100% - 333px);
+  top: 0px;
+  right: 185px;
+  left: 148px;
+  box-shadow: 0px 1px 0px rgba(0, 0, 0, 0.3);
+  border-radius: 5px;
+  background-color: #fff;
+  height: 43px;
+}
+.y {
+  position: absolute;
+  width: calc(100% - 333px);
+  top: 0px;
+  right: 148px;
+  left: 185px;
+  box-shadow: 0px 1px 0px rgba(0, 0, 0, 0.3);
+  border-radius: 5px;
+  background-color: #fff;
+  height: 43px;
+}
+.u {
+  position: absolute;
+  width: calc(100% - 333px);
+  top: 0px;
+  right: 111px;
+  left: 222px;
+  box-shadow: 0px 1px 0px rgba(0, 0, 0, 0.3);
+  border-radius: 5px;
+  background-color: #fff;
+  height: 43px;
+}
+.i {
+  position: absolute;
+  width: calc(100% - 333px);
+  top: 0px;
+  right: 74px;
+  left: 259px;
+  box-shadow: 0px 1px 0px rgba(0, 0, 0, 0.3);
+  border-radius: 5px;
+  background-color: #fff;
+  height: 43px;
+}
+.o {
+  position: absolute;
+  width: calc(100% - 333px);
+  top: 0px;
+  right: 37px;
+  left: 296px;
+  box-shadow: 0px 1px 0px rgba(0, 0, 0, 0.3);
+  border-radius: 5px;
+  background-color: #fff;
+  height: 43px;
+}
+.p {
+  position: absolute;
+  width: calc(100% - 333px);
+  top: 0px;
+  right: 0px;
+  left: 333px;
+  box-shadow: 0px 1px 0px rgba(0, 0, 0, 0.3);
+  border-radius: 5px;
+  background-color: #fff;
+  height: 43px;
+}
+.topRow {
+  position: absolute;
+  width: calc(100% - 11px);
+  top: 8px;
+  right: 6px;
+  left: 5px;
+  height: 43px;
+}
+.icon {
+  position: absolute;
+  top: 116px;
+  left: 3px;
+  border-radius: 5px;
+  width: 42px;
+  height: 43px;
+}
+.icon1 {
+  position: absolute;
+  top: 116px;
+  right: 3px;
+  border-radius: 5px;
+  width: 42px;
+  height: 42px;
+}
+.alphabet {
+  align-self: stretch;
+  position: relative;
+  backdrop-filter: blur(70px);
+  height: 169px;
+  overflow: hidden;
+  flex-shrink: 0;
+}
+.homeIndicator {
+  position: absolute;
+  top: 110px;
+  left: calc(50% - 66.5px);
+  border-radius: 3px;
+  background-color: #1f2024;
+  width: 133px;
+  height: 6px;
+}
+.micIcon {
+  position: absolute;
+  top: 64px;
+  right: 18px;
+  width: 42px;
+  height: 42px;
+  overflow: hidden;
+}
+.emojisIcon {
+  position: absolute;
+  top: 64px;
+  left: 18px;
+  width: 42px;
+  height: 42px;
+  overflow: hidden;
+}
+.space1 {
+  position: absolute;
+  width: 100%;
+  top: calc(50% - 9.5px);
+  left: 0px;
+  letter-spacing: -0.02em;
+  display: inline-block;
+}
+.space {
+  position: absolute;
+  width: calc(100% - 193px);
+  top: 3px;
+  right: 97px;
+  left: 96px;
+  box-shadow: 0px 1px 0px rgba(0, 0, 0, 0.3);
+  border-radius: 5px;
+  background-color: #fff;
+  height: 43px;
+}
+.return {
+  position: absolute;
+  top: 3px;
+  right: 3px;
+  box-shadow: 0px 1px 0px rgba(0, 0, 0, 0.3);
+  border-radius: 5px;
+  background-color: #006ffd;
+  width: 87px;
+  height: 43px;
+  color: #fff;
+}
+.div {
+  position: absolute;
+  top: 3px;
+  left: 3px;
+  box-shadow: 0px 1px 0px rgba(0, 0, 0, 0.3);
+  border-radius: 5px;
+  background-color: #c5c6cc;
+  width: 87px;
+  height: 43px;
+}
+.controller {
+  align-self: stretch;
+  position: relative;
+  height: 124px;
+  overflow: hidden;
+  flex-shrink: 0;
+  font-size: 16px;
+}
+.iosKeyboardPortrait {
+  position: absolute;
+  width: 100%;
+  right: 0px;
+  bottom: 0px;
+  left: 0px;
+  backdrop-filter: blur(70px);
+  background-color: #d4d6dd;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+  text-align: center;
+  font-size: 24px;
+  font-family: 'SF Pro Text';
+}
+.time {
+  position: absolute;
+  top: calc(50% - 9px);
+  left: 0px;
+  letter-spacing: -0.17px;
+  font-weight: 600;
+  display: inline-block;
+  width: 54px;
+}
+.action {
+  position: absolute;
+  height: 40.91%;
+  width: 14.32%;
+  top: 31.82%;
+  right: 80.37%;
+  bottom: 27.27%;
+  left: 5.31%;
+  overflow: hidden;
+}
+.battery {
+  position: absolute;
+  top: -3px;
+  left: 41px;
+}
+.signalIcon {
+  position: relative;
+  width: 17.1px;
+  height: 10.7px;
+}
+.wiFi {
+  position: absolute;
+  top: -1px;
+  left: 21px;
+  font-size: 14px;
+}
+.container {
+  position: absolute;
+  top: calc(50% - 6px);
+  right: 14px;
+  width: 68px;
+  height: 14px;
+  overflow: hidden;
+  text-align: left;
+  font-size: 17px;
+}
+.iosStatusBar {
+  position: absolute;
+  width: 100%;
+  top: 0px;
+  right: 0px;
+  left: 0px;
+  backdrop-filter: blur(40px);
+  background-color: #fff;
+  height: 44px;
+  text-align: center;
+  font-size: 15px;
+  font-family: 'SF Pro Text';
+}
+.drugSearch {
+  width: 100%;
+  position: relative;
+  background-color: #fff;
+  height: 812px;
+  overflow: hidden;
+  text-align: left;
+  font-size: 14px;
+  color: #1f2024;
+  font-family: Inter;
+}
+
