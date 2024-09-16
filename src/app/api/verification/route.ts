@@ -85,27 +85,50 @@ export const POST = async (req: NextRequest) => {
         const text = response.text();
         console.log("this is the output text ", text)
 
-        // Parse the JSON response
-        const jsonResponse = JSON.parse(text);
+        // Extract JSON from the response
+        const jsonMatch = text.match(/```json\n([\s\S]*?)\n```/);
+        let jsonResponse;
+        if (jsonMatch && jsonMatch[1]) {
+            try {
+                jsonResponse = JSON.parse(jsonMatch[1]);
+            } catch (parseError) {
+                console.error("Error parsing JSON response:", parseError);
+                return new Response(
+                    JSON.stringify({ message: "Error parsing AI response" }),
+                    { status: 500 }
+                );
+            }
+        } else {
+            console.error("No valid JSON found in the response");
+            return new Response(
+                JSON.stringify({ message: "Invalid AI response format" }),
+                { status: 500 }
+            );
+        }
 
         // Store the verification result
-        await db.drugVerification.create({
-            data: {
-                userId: user.id,
-                drugId: drugInfo.id,
-                verificationMethod: "AI-assisted",
-                verificationResult: text,
-            },
-        });
+        try {
+            await db.drugVerification.create({
+                data: {
+                    userId: user.id,
+                    drugId: drugInfo.id,
+                    verificationMethod: "AI-assisted",
+                    verificationResult: JSON.stringify(jsonResponse),
+                },
+            });
+        } catch (dbError) {
+            console.error("Error storing verification result:", dbError);
+            // Continue with the response even if storing fails
+        }
 
         return new Response(JSON.stringify(jsonResponse), {
             headers: { "Content-Type": "application/json" },
         });
 
     } catch (error) {
-        console.error(error);
+        console.error("Error during drug verification:", error);
         return new Response(
-            JSON.stringify({ message: "An error occurred during drug verification" }),
+            JSON.stringify({ message: "An error occurred during drug verification", error: (error as Error).message }),
             { status: 500 }
         );
     }

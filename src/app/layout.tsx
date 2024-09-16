@@ -2,6 +2,8 @@ import type { Metadata } from "next";
 import localFont from "next/font/local";
 import "./globals.css";
 import Navbar from "@/components/Navbar";
+import Sidebar from "@/components/Sidebar";
+import { getKindeServerSession } from "@kinde-oss/kinde-auth-nextjs/server";
 
 const geistSans = localFont({
   src: "./fonts/GeistVF.woff",
@@ -19,20 +21,26 @@ export const metadata: Metadata = {
   description: "Verify and learn about your medications",
 };
 
-export default function RootLayout({
+export default async function RootLayout({
   children,
 }: Readonly<{
   children: React.ReactNode;
 }>) {
+  const { getUser } = getKindeServerSession();
+  const user = await getUser();
+
   return (
     <html lang="en">
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
         <Navbar />
-        <main className="flex min-h-screen flex-col items-center justify-between p-24">
-          {children}
-        </main>
+        <div className="flex min-h-screen">
+          {user && <Sidebar />}
+          <main className="flex-1 p-8">
+            {children}
+          </main>
+        </div>
       </body>
     </html>
   );

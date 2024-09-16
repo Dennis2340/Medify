@@ -5,18 +5,18 @@ import { NextRequest } from "next/server";
 import { z } from "zod";
 
 const HealthProfileValidator = z.object({
-    age: z.number().min(0).max(120).optional(),
+    age: z.preprocess((val) => Number(val) || undefined, z.number().min(0).max(120).optional()),
     gender: z.enum(["male", "female", "other"]).optional(),
-    weight: z.number().min(0).optional(),
-    height: z.number().min(0).optional(),
-    allergies: z.array(z.string()),
-    currentMedications: z.array(z.string()),
-    medicalConditions: z.array(z.string()),
+    weight: z.preprocess((val) => Number(val) || undefined, z.number().min(0).optional()),
+    height: z.preprocess((val) => Number(val) || undefined, z.number().min(0).optional()),
+    allergies: z.array(z.string()).default([]),
+    currentMedications: z.array(z.string()).default([]),
+    medicalConditions: z.array(z.string()).default([]),
     medicalHistory: z.string().optional(),
-    dietaryRestrictions: z.array(z.string()),
+    dietaryRestrictions: z.array(z.string()).default([]),
     familyHistory: z.string().optional(),
     lifestyle: z.object({
-        smoker: z.boolean(),
+        smoker: z.preprocess((val) => val === 'true', z.boolean()),
         alcoholConsumption: z.enum(["none", "light", "moderate", "heavy"]),
         exerciseFrequency: z.enum(["sedentary", "light", "moderate", "active"])
     }).optional(),
@@ -32,34 +32,79 @@ export const POST = async (req: NextRequest) => {
         if (!user || !user.id) {
             return new Response(JSON.stringify({message: "User not found"}), {status: 404})
         }
+
         const body = await req.json();
         const healthProfileData = HealthProfileValidator.parse(body);
 
-        // Create the health profile
-        const healthProfile = await db.healthProfile.create({
-            data: {
-                userId: user.id,
-                age: healthProfileData.age,
-                gender: healthProfileData.gender,
-                weight: healthProfileData.weight,
-                height: healthProfileData.height,
-                allergies: healthProfileData.allergies,
-                currentMedications: healthProfileData.currentMedications,
-                medicalConditions: healthProfileData.medicalConditions,
-                dietaryRestrictions: healthProfileData.dietaryRestrictions,
-                familyHistory: healthProfileData.familyHistory,
-                lifestyle: healthProfileData.lifestyle as any,
-                pregnancyStatus: healthProfileData.pregnancyStatus,
-                bloodType: healthProfileData.bloodType
-            }
+        // Check if a health profile already exists for this user
+        const existingProfile = await db.healthProfile.findUnique({
+            where: { userId: user.id }
         });
 
-        return new Response(JSON.stringify({message: "Health Profile Created", healthProfile}), {
-            status: 201,
+        let healthProfile;
+        if (existingProfile) {
+            // Update existing profile
+            healthProfile = await db.healthProfile.update({
+                where: { userId: user.id },
+                data: {
+                    ...healthProfileData,
+                    lifestyle: healthProfileData.lifestyle ? {
+                        smoker: healthProfileData.lifestyle.smoker,
+                        alcoholConsumption: healthProfileData.lifestyle.alcoholConsumption,
+                        exerciseFrequency: healthProfileData.lifestyle.exerciseFrequency
+                    } : undefined,
+                }
+            });
+        } else {
+            // Create new profile
+            healthProfile = await db.healthProfile.create({
+                data: {
+                    userId: user.id,
+                    ...healthProfileData,
+                    lifestyle: healthProfileData.lifestyle ? {
+                        smoker: healthProfileData.lifestyle.smoker,
+                        alcoholConsumption: healthProfileData.lifestyle.alcoholConsumption,
+                        exerciseFrequency: healthProfileData.lifestyle.exerciseFrequency
+                    } : undefined,
+                }
+            });
+        }
+
+        return new Response(JSON.stringify({message: "Health Profile Updated", healthProfile}), {
+            status: 200,
             headers: { "Content-Type": "application/json" },
         });
     } catch (error) {
-        console.error("Error creating health profile:", error);
-        return new Response(JSON.stringify({message: "Error creating health profile"}), {status: 500})
+        console.error("Error updating health profile:", error);
+        return new Response(JSON.stringify({message: "Error updating health profile", error: (error as Error).message}), {status: 500})
+    }
+}
+
+export const GET = async () => {
+    try {
+        const { getUser } = getKindeServerSession();
+        const user = await getUser();
+
+        if (!user || !user.id) {
+            return new Response(JSON.stringify({message: "User not found"}), {status: 404})
+        }
+
+        const healthProfile = await db.healthProfile.findUnique({
+            where: {
+                userId: user.id
+            }
+        });
+
+        if (!healthProfile) {
+            return new Response(JSON.stringify({message: "Health profile not found"}), {status: 404})
+        }
+
+        return new Response(JSON.stringify(healthProfile), {
+            status: 200,
+            headers: { "Content-Type": "application/json" },
+        });
+    } catch (error) {
+        console.error("Error fetching health profile:", error);
+        return new Response(JSON.stringify({message: "Error fetching health profile"}), {status: 500})
     }
 }

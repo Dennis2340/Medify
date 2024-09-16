@@ -1,8 +1,13 @@
+import MainDashboard from '@/components/Maindashboard'
 import React from 'react'
 
 
 const Page = () => {
-  return <div></div>
+  return (
+  <>
+  <MainDashboard/>
+  </>
+  )
 }
 
 export default Page

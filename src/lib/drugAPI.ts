@@ -1,81 +1,73 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
 import axios from 'axios';
 
+const baseUrl = 'https://dailymed.nlm.nih.gov/dailymed/services/v2';
+
 export interface DrugInfo {
     id: string;
     name: string;
-    genericName: string;
-    manufacturer: string;
     activeIngredients: string[];
     usage: string;
     sideEffects: string[];
     contraindications: string[];
 }
 
-const baseUrl = 'https://api.fda.gov/drug/drugsfda.json';
+interface DrugSearchResult {
+    product_id: string;
+    drug_name: string;
+}
 
-export const searchDrugs = async (searchTerm: string, limit = 10): Promise<DrugInfo[]> => {
+export const searchDrugs = async (searchTerm: string, limit = 10): Promise<DrugSearchResult[]> => {
     try {
-        const response = await axios.get(baseUrl, {
+        const response = await axios.get(`${baseUrl}/drugnames.json`, {
             params: {
-                search: `(products.brand_name:"${searchTerm}" OR products.generic_name:"${searchTerm}" OR openfda.manufacturer_name:"${searchTerm}")`,
-                limit: limit
+                drug_name: searchTerm,
+                pagesize: limit
             }
         });
 
-        if (response.data.results && response.data.results.length > 0) {
-            return response.data.results.flatMap((drug: any) => 
-                drug.products.map((product: any) => ({
-                    id: `${drug.application_number}-${product.product_number}`,
-                    name: product.brand_name,
-                    genericName: product.generic_name,
-                    manufacturer: drug.sponsor_name,
-                    activeIngredients: product.active_ingredients.map((ai: any) => ai.name),
-                    usage: product.dosage_form,
-                    sideEffects: [], // Not available in this API
-                    contraindications: [] // Not available in this API
-                }))
-            );
+        if (response.data.data && response.data.data.length > 0) {
+            return response.data.data.map((drug: any) => ({
+                product_id: drug.product_id,
+                drug_name: drug.drug_name
+            }));
         }
 
         return [];
     } catch (error) {
         console.error('Error searching drugs:', error);
-        return [];
+        throw error;
     }
 };
 
-export const queryDrugAPI = async (drugId: string): Promise<DrugInfo | null> => {
+export const getDrugDetails = async (setId: string): Promise<DrugInfo> => {
     try {
-        const [applicationNumber, productNumber] = drugId.split('-');
-        const response = await axios.get(baseUrl, {
-            params: {
-                search: `application_number:"${applicationNumber}"`,
-                limit: 1
-            }
-        });
+        const [splResponse] = await Promise.all([
+            axios.get(`${baseUrl}/spls/${setId}.json`),
+            axios.get(`${baseUrl}/spls/${setId}/packaging.json`)
+        ]);
 
-        if (response.data.results && response.data.results.length > 0) {
-            const drug = response.data.results[0];
-            const product = drug.products.find((p: any) => p.product_number === productNumber);
+        const splData = splResponse.data.data[0];
+        // const packagingData = packagingResponse.data.data;
 
-            if (product) {
-                return {
-                    id: drugId,
-                    name: product.brand_name,
-                    genericName: product.generic_name,
-                    manufacturer: drug.sponsor_name,
-                    activeIngredients: product.active_ingredients.map((ai: any) => ai.name),
-                    usage: product.dosage_form,
-                    sideEffects: [], // Not available in this API
-                    contraindications: [] // Not available in this API
-                };
-            }
-        }
+        const activeIngredients = splData.active_ingredient_name
+            ? splData.active_ingredient_name.split(';').map((ingredient: string) => ingredient.trim())
+            : [];
 
-        return null;
+        return {
+            id: setId,
+            name: splData.title || '',
+            activeIngredients,
+            usage: splData.indications_and_usage || '',
+            sideEffects: splData.adverse_reactions ? [splData.adverse_reactions] : [],
+            contraindications: splData.contraindications ? [splData.contraindications] : []
+        };
     } catch (error) {
-        console.error('Error querying drug API:', error);
-        return null;
+        console.error('Error fetching drug details:', error);
+        throw error;
     }
+};
+
+export const getDrugPDF = (setId: string): string => {
+    return `https://dailymed.nlm.nih.gov/dailymed/getFile.cfm?setid=${setId}&type=pdf`;
 };

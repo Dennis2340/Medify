@@ -9,7 +9,7 @@ export const genAI = new GoogleGenerativeAI(
 
 
 
-export const llm = genAI.getGenerativeModel({model:"gemini-1.5-flash-latest"})
+export const llm = genAI.getGenerativeModel({model:"gemini-1.0-pro"})
 export const model = genAI.getGenerativeModel({ model: "embedding-001" });
 
 
